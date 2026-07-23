@@ -116,7 +116,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
-  margin: 0 0 4px;
+  margin: 0 0 18px;
 }
 
 .project-list {
