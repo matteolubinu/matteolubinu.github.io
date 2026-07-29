@@ -38,25 +38,9 @@ body {
 .page {
   width: 100%;
   max-width: 400px;
-  padding: 64px 24px 48px;
+  padding: 48px 24px;
   position: relative;
 }
-
-.lang-toggle {
-  position: absolute;
-  top: 0;
-  right: 24px;
-  border: none;
-  background: none;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 4px 2px;
-  cursor: pointer;
-}
-
-.lang-toggle:hover { color: var(--text); }
 
 .hero {
   text-align: center;
