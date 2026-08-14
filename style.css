@@ -110,6 +110,7 @@ body {
 }
 
 .project {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -124,6 +125,29 @@ body {
 }
 
 .project:active { transform: scale(0.98); }
+
+/* Stretched link: il titolo porta al sito del progetto ma l'area cliccabile è tutta la
+   card. Il badge App Store si alza sopra con z-index per restare un link a sé. */
+.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Freccetta "porta fuori": senza, la card sembrava avere solo il badge come link e
+   niente diceva che il titolo apre il sito del progetto (su touch non c'è hover). */
+.ext {
+  width: 11px;
+  height: 11px;
+  margin-left: 2px;
+  color: var(--text-secondary);
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
 
 .project-icon {
   width: 44px;
@@ -153,24 +177,18 @@ body {
 }
 
 .project-cta {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   margin-left: auto;
+  display: block;
 }
 
 .badge-live-img {
   height: 34px;
   width: auto;
   border-radius: 7px;
-}
-
-.badge-tf {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--accent);
-  border: 1.5px solid var(--accent);
-  padding: 7px 12px;
-  border-radius: 999px;
-  white-space: nowrap;
+  display: block;
 }
 
 footer {
