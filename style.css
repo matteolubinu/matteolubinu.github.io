@@ -191,6 +191,24 @@ body {
   display: block;
 }
 
+/* Sotto i 400px il badge (102px fissi) lasciava alla descrizione una colonna da ~64px e
+   il testo si spezzava su cinque righe: qui il badge va a capo su una riga sua,
+   allineato al testo (44px di icona + 14px di gap). */
+@media (max-width: 400px) {
+  .project {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .project-body {
+    flex-basis: calc(100% - 58px);
+  }
+
+  .project-cta {
+    margin-left: 58px;
+  }
+}
+
 footer {
   margin-top: 40px;
   text-align: center;
