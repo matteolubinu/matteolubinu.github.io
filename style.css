@@ -94,6 +94,15 @@ body {
   margin-top: 56px;
 }
 
+.projects + .projects {
+  margin-top: 36px;
+}
+
+/* Case study card: no App Store badge, the whole card opens the write-up. */
+.study .project-body p {
+  color: var(--text-secondary);
+}
+
 .projects h2 {
   font-size: 12px;
   font-weight: 600;

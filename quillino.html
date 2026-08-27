@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quillino — Case study — Matteo Lubinu</title>
+<meta name="description" content="Case study: designing Quillino, a native iOS rental manager for Italian private landlords.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="quillino.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="index.html">← Matteo Lubinu</a>
+    <div class="toggles">
+      <button class="pill" id="shots-theme" type="button" aria-label="Screenshot theme"></button>
+      <button class="pill" id="lang" type="button" aria-label="Cambia lingua">IT</button>
+    </div>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <p class="eyebrow"><span class="lang-en">Case study · 2026</span><span class="lang-it">Case study · 2026</span></p>
+    <h1>
+      <span class="lang-en">Quillino — designing a rental manager around the one question landlords ask every month</span>
+      <span class="lang-it">Quillino — progettare un gestionale per affitti attorno all'unica domanda che ogni proprietario si fa ogni mese</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-en">A native iOS app for Italian private landlords. A solo project — from positioning and information architecture to the design system, shipped on the App Store and actively maintained since.</span>
+      <span class="lang-it">App iOS nativa per piccoli proprietari italiani. Progetto personale — dal posizionamento e l'architettura informativa fino al design system, pubblicata su App Store e aggiornata di continuo dal lancio.</span>
+    </p>
+  </header>
+
+  <dl class="meta">
+    <div>
+      <dt><span class="lang-en">Role</span><span class="lang-it">Ruolo</span></dt>
+      <dd><span class="lang-en">Sole designer &amp; product owner</span><span class="lang-it">Unico designer e product owner</span></dd>
+    </div>
+    <div>
+      <dt><span class="lang-en">Timeline</span><span class="lang-it">Tempistiche</span></dt>
+      <dd><span class="lang-en">~1 month build · launched 1 June 2026</span><span class="lang-it">~1 mese di sviluppo · lancio 1° giugno 2026</span></dd>
+    </div>
+    <div>
+      <dt><span class="lang-en">Platforms</span><span class="lang-it">Piattaforme</span></dt>
+      <dd>iOS · iPadOS · macOS · watchOS</dd>
+    </div>
+    <div>
+      <dt><span class="lang-en">Scope</span><span class="lang-it">Ambito</span></dt>
+      <dd><span class="lang-en">Research, IA, design system, UI, copy, release</span><span class="lang-it">Ricerca, IA, design system, UI, copy, rilascio</span></dd>
+    </div>
+    <div>
+      <dt><span class="lang-en">Built with</span><span class="lang-it">Realizzata con</span></dt>
+      <dd><span class="lang-en">SwiftUI · AI pair-programming</span><span class="lang-it">SwiftUI · sviluppo in coppia con l'AI</span></dd>
+    </div>
+    <div>
+      <dt><span class="lang-en">Status</span><span class="lang-it">Stato</span></dt>
+      <dd><span class="lang-en">Live on the App Store</span><span class="lang-it">Pubblicata su App Store</span></dd>
+    </div>
+  </dl>
+
+  <!-- ================= OVERVIEW ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Overview</h2>
+      <p>Italian private landlords with one to five rentals manage everything in fragments — a spreadsheet for rent, the phone calendar for deadlines, a folder for receipts. The apps that exist are built for agencies: too heavy, and blind to the Italian tax rules a private owner actually has to handle (cedolare secca, the 730 declaration, ISTAT adjustments, imposta di registro).</p>
+      <p>Quillino is the app I wanted to use myself. The target user isn't a professional — it's someone who wants their rentals handled with the least possible effort and no learning curve.</p>
+      <p>I ran the whole thing solo: positioning, competitive research, information architecture, the design system, every screen, the microcopy, the App Store assets, pricing and the release cadence. Development was done in pair-programming with an AI coding assistant, with me owning every product and design decision.</p>
+    </div>
+    <div class="lang-it">
+      <h2>Contesto</h2>
+      <p>I piccoli proprietari italiani che gestiscono da uno a cinque immobili tengono tutto in modo frammentato — un foglio Excel per gli affitti, il calendario del telefono per le scadenze, una cartella per le ricevute. Le app che esistono sono pensate per le agenzie: troppo pesanti, e cieche rispetto alle regole fiscali italiane con cui un privato deve davvero fare i conti (cedolare secca, dichiarazione 730, adeguamenti ISTAT, imposta di registro).</p>
+      <p>Quillino è l'app che volevo usare io per primo. L'utente di riferimento non è un professionista: è una persona che vuole gestire i propri affitti con il minimo sforzo e senza curva di apprendimento.</p>
+      <p>Ho seguito tutto da solo: posizionamento, ricerca sui competitor, architettura informativa, design system, ogni schermata, i microtesti, gli asset per l'App Store, i prezzi e il ritmo dei rilasci. Lo sviluppo è stato fatto in coppia con un assistente AI, con me a decidere ogni scelta di prodotto e di design.</p>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Research: a competitive benchmark, and its limits</h2>
+      <p>I did <strong>not</strong> run primary research. This is the honest gap in the project: no interviews, no diary studies, no usability sessions with real landlords before launch. What I did was a structured competitive benchmark — the Italian players (AffittoMio / Gestione Affitti, AlloggioPro, Rentila, Rentadia) plus a few US comparables — mapping their information architecture, their onboarding, and how each one handled, or ignored, fiscal reporting.</p>
+      <p>The benchmark surfaced a consistent gap: none of them were designed for the Italian fiscal context, and none for a non-professional user. That gap became the product's positioning.</p>
+      <div class="callout">
+        <p><strong>The hypothesis I designed around</strong></p>
+        <p>Every competitor I looked at pointed the same way: the number-one question a landlord has is always <em>"how much have I collected this month?"</em>. So I made that the single largest element on the first screen — before properties, before deadlines. The written reviews after launch ("useful and above all easy to understand") suggest the bet was right — but validating it properly with users is the first thing I'd add.</p>
+      </div>
+    </div>
+    <div class="lang-it">
+      <h2>Ricerca: un benchmark competitivo, e i suoi limiti</h2>
+      <p><strong>Non</strong> ho condotto ricerca primaria. Questo è il limite onesto del progetto: nessuna intervista, nessun diary study, nessuna sessione di usability con proprietari reali prima del lancio. Quello che ho fatto è un benchmark competitivo strutturato — gli attori italiani (AffittoMio / Gestione Affitti, AlloggioPro, Rentila, Rentadia) più alcuni comparabili statunitensi — mappandone l'architettura informativa, l'onboarding e il modo in cui ciascuno gestiva, o ignorava, la parte fiscale.</p>
+      <p>Il benchmark ha fatto emergere un gap ricorrente: nessuno era progettato per il contesto fiscale italiano, e nessuno per un utente non professionale. Quel gap è diventato il posizionamento del prodotto.</p>
+      <div class="callout">
+        <p><strong>L'ipotesi attorno a cui ho progettato</strong></p>
+        <p>Ogni competitor analizzato portava nella stessa direzione: la domanda numero uno di un proprietario è sempre <em>"quanto ho incassato questo mese?"</em>. Così l'ho reso l'elemento più grande della prima schermata — prima degli immobili, prima delle scadenze. Le recensioni scritte dopo il lancio ("utile e soprattutto facile da capire") suggeriscono che la scommessa fosse giusta — ma validarla davvero con gli utenti è la prima cosa che aggiungerei.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IA ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Information architecture</h2>
+      <p>I organised the product around five areas that match the "mental drawers" a landlord already uses day to day — just digitised and automated.</p>
+      <table>
+        <tr><th>Area</th><th>Purpose</th></tr>
+        <tr><td>Dashboard</td><td>Monthly snapshot: collected, expenses, urgent deadlines</td></tr>
+        <tr><td>Properties</td><td>Buildings, units, tenants, contracts, documents</td></tr>
+        <tr><td>Deadlines</td><td>One unified calendar with schedulable push notifications</td></tr>
+        <tr><td>Report</td><td>Automatic annual tax summary (cedolare / IRPEF)</td></tr>
+        <tr><td>Widget</td><td>Monthly collection bar on the iOS Home Screen</td></tr>
+      </table>
+      <p>A flat tab bar keeps every function one tap away from anywhere in the app.</p>
+    </div>
+    <div class="lang-it">
+      <h2>Architettura informativa</h2>
+      <p>Ho organizzato il prodotto attorno a cinque aree che corrispondono ai "cassetti mentali" che un proprietario usa già nella gestione quotidiana — solo digitalizzati e automatizzati.</p>
+      <table>
+        <tr><th>Area</th><th>Scopo</th></tr>
+        <tr><td>Dashboard</td><td>Colpo d'occhio mensile: incassato, spese, scadenze urgenti</td></tr>
+        <tr><td>Immobili</td><td>Edifici, unità, inquilini, contratti, documenti</td></tr>
+        <tr><td>Scadenze</td><td>Un calendario unico con notifiche push programmabili</td></tr>
+        <tr><td>Report</td><td>Riepilogo fiscale annuo automatico (cedolare / IRPEF)</td></tr>
+        <tr><td>Widget</td><td>Barra di incasso mensile sulla Home Screen iOS</td></tr>
+      </table>
+      <p>Una tab bar piatta tiene ogni funzione a un tap di distanza da qualsiasi punto dell'app.</p>
+    </div>
+  </section>
+
+  <!-- ================= DESIGN SYSTEM ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Design system first</h2>
+      <p>I built the design system before any screen — semantic tokens for colour, type and spacing; components with auto-layout; dark mode designed in from the start. Every colour pair was checked against WCAG AA.</p>
+      <p>Working in AI pair-programming made this non-negotiable: generated code drifts back to hardcoded values between sessions, so a strict token layer was the only way to keep 25+ screens visually coherent across months of iteration.</p>
+    </div>
+    <div class="lang-it">
+      <h2>Il design system per primo</h2>
+      <p>Ho costruito il design system prima di qualsiasi schermata — token semantici per colore, tipografia e spaziatura; componenti con auto-layout; dark mode prevista fin dall'inizio. Ogni coppia di colori è stata verificata rispetto a WCAG AA.</p>
+      <p>Lavorare in coppia con l'AI lo ha reso irrinunciabile: il codice generato tende a tornare a valori hardcoded tra una sessione e l'altra, quindi un layer di token rigoroso era l'unico modo per tenere oltre 25 schermate visivamente coerenti lungo mesi di iterazione.</p>
+    </div>
+  </section>
+
+  <!-- ================= KEY DECISIONS ================= -->
+  <section>
+    <div class="lang-en"><h2>Key design decisions</h2></div>
+    <div class="lang-it"><h2>Decisioni di design principali</h2></div>
+
+    <div class="shots" aria-label="Quillino screenshots">
+      <figure>
+        <img src="assets/quillino/01-dashboard-dark.png" data-light="assets/quillino/01-dashboard-light.png" data-dark="assets/quillino/01-dashboard-dark.png" alt="Quillino dashboard" loading="lazy">
+        <figcaption><span class="lang-en">Dashboard — the money question first</span><span class="lang-it">Dashboard — prima la domanda sui soldi</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/02-immobili-dark.png" data-light="assets/quillino/02-immobili-light.png" data-dark="assets/quillino/02-immobili-dark.png" alt="Quillino properties list grouped by building" loading="lazy">
+        <figcaption><span class="lang-en">Properties grouped by building</span><span class="lang-it">Immobili raggruppati per edificio</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/03-pagamenti-dark.png" data-light="assets/quillino/03-pagamenti-light.png" data-dark="assets/quillino/03-pagamenti-dark.png" alt="Quillino payments by month" loading="lazy">
+        <figcaption><span class="lang-en">Payments — one colour language for status</span><span class="lang-it">Pagamenti — un solo linguaggio di colore per lo stato</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/04-scadenze-dark.png" data-light="assets/quillino/04-scadenze-light.png" data-dark="assets/quillino/04-scadenze-dark.png" alt="Quillino deadlines list" loading="lazy">
+        <figcaption><span class="lang-en">Deadlines — the Italian ones, generated for you</span><span class="lang-it">Scadenze — quelle italiane, generate al posto tuo</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/05-report-dark.png" data-light="assets/quillino/05-report-light.png" data-dark="assets/quillino/05-report-dark.png" alt="Quillino annual tax report" loading="lazy">
+        <figcaption><span class="lang-en">Report — a stopping point, not a wall of numbers</span><span class="lang-it">Report — un punto d'arrivo, non un muro di numeri</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="lang-en">
+      <h3>The dashboard answers the money question first</h3>
+      <p>"Incassato questo mese" is the biggest number on screen, with a progress bar toward the month's total and a red "in ritardo" pill when something is late. Everything else — property count, upcoming deadlines, expenses, year-to-date — sits below as secondary stats.</p>
+      <h3>One colour language for payment status, everywhere</h3>
+      <p>Paid is green, partial is amber, late is red — the same three semantics on the dashboard, the payments list, the property rows and the widget. A landlord learns the code once.</p>
+      <h3>Collect without leaving the screen</h3>
+      <p>"Da incassare questo mese" is a quick-pay list: one tap marks a month paid, a secondary action opens a pre-written WhatsApp message. The text is contextual — a different template for a confirmation, a chase, a renewal, or arrears.</p>
+      <h3>Deadlines the user would otherwise forget</h3>
+      <p>The app works out the Italian tax and contract deadlines and reminds the user in time, each with a schedulable notification. The user never has to hold the calendar in their head.</p>
+      <h3>Report as a stopping point</h3>
+      <p>The 730 summary splits cedolare vs IRPEF, estimates the taxable base, and carries a plain "this is an estimate — talk to your accountant" disclaimer. It sits behind a single card tap so the more frequent actions (receipt, tenant report) come first.</p>
+    </div>
+    <div class="lang-it">
+      <h3>La dashboard risponde prima alla domanda sui soldi</h3>
+      <p>"Incassato questo mese" è il numero più grande in schermata, con una barra di avanzamento verso il totale del mese e una pill rossa "in ritardo" quando qualcosa è scoperto. Tutto il resto — numero di immobili, scadenze in arrivo, spese, incassato dell'anno — sta sotto come statistica secondaria.</p>
+      <h3>Un solo linguaggio di colore per lo stato dei pagamenti, ovunque</h3>
+      <p>Pagato è verde, parziale è ambra, in ritardo è rosso — le stesse tre semantiche sulla dashboard, nella lista pagamenti, sulle righe degli immobili e nel widget. Il proprietario impara il codice una volta sola.</p>
+      <h3>Incassare senza uscire dalla schermata</h3>
+      <p>"Da incassare questo mese" è una lista ad azione rapida: un tap segna un mese come pagato, un'azione secondaria apre un messaggio WhatsApp già scritto. Il testo è contestuale — un template diverso per una conferma, un sollecito, un rinnovo o gli arretrati.</p>
+      <h3>Scadenze che l'utente altrimenti dimenticherebbe</h3>
+      <p>L'app calcola le scadenze fiscali e contrattuali italiane e le ricorda in tempo, ognuna con una notifica programmabile. L'utente non deve tenere a mente il calendario.</p>
+      <h3>Il Report come punto d'arrivo</h3>
+      <p>Il riepilogo per il 730 separa cedolare e IRPEF, stima l'imponibile e porta con sé un disclaimer chiaro: "stima indicativa — per la dichiarazione rivolgiti al commercialista". Vive dietro il tap di una singola card, così le azioni più frequenti (quietanza, report inquilino) vengono prima.</p>
+    </div>
+  </section>
+
+  <!-- ================= DISCARDED PATTERN ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>A pattern I threw away</h2>
+      <p>The first paywall was a Free-vs-Pro comparison table. It tested badly against my own judgement: the table made the user do work to find the one plan that mattered, and buried "Restore purchases" below the fold — an App Review risk.</p>
+      <p>The rebuild is a three-row vertical plan selector with the annual plan preselected, five bullet benefits instead of a matrix, a single CTA that reflects the chosen plan, and Restore moved into the header. Selecting a row fills its background rather than just outlining it, so the choice is unambiguous.</p>
+      <p>I repriced at the same time. A benchmark of the Italian competitors showed the market converging around €60 a year; Quillino was sitting at €12.99, well under. Annual moved to €59.99 and a monthly option was added for lower commitment.</p>
+    </div>
+    <div class="lang-it">
+      <h2>Un pattern che ho buttato</h2>
+      <p>Il primo paywall era una tabella comparativa Free / Pro. Ha retto male al mio stesso giudizio: la tabella costringeva l'utente a lavorare per trovare l'unico piano che contava, e nascondeva "Ripristina acquisti" sotto la piega — un rischio in fase di App Review.</p>
+      <p>La nuova versione è un selettore di piani a tre righe verticali con l'annuale preselezionato, cinque benefici puntati invece di una matrice, una singola CTA che riflette il piano scelto, e Ripristina spostato nell'header. Selezionare una riga ne riempie lo sfondo invece di limitarsi al bordo, così la scelta è inequivocabile.</p>
+      <p>Ne ho approfittato per rivedere i prezzi. Un benchmark dei competitor italiani mostrava il mercato convergere attorno ai 60 € l'anno; Quillino era fermo a 12,99 €, molto sotto. L'annuale è passato a 59,99 € ed è stato aggiunto un piano mensile per chi vuole meno impegno.</p>
+    </div>
+  </section>
+
+  <!-- ================= CRAFT & CONSTRAINTS ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Craft and constraints</h2>
+      <div class="callout">
+        <p><strong>The technical background did the heavy lifting</strong></p>
+        <p>Without years on both sides — design and front-end — the app wouldn't have held together. On the technical side I caught that the generated data model wouldn't scale on the Building → Unit → Tenant hierarchy, handled inconsistent widget state, and fixed a SwiftUI binding that wasn't refreshing the payments list.</p>
+        <p>On the design side I kept component and token consistency by hand against the AI reintroducing hardcoded values, and rejected several generated patterns that were functionally fine but contradicted flows I'd already established.</p>
+      </div>
+    </div>
+    <div class="lang-it">
+      <h2>Cura e vincoli</h2>
+      <div class="callout">
+        <p><strong>Il background tecnico ha fatto la differenza</strong></p>
+        <p>Senza anni da entrambi i lati — design e front-end — l'app non avrebbe retto. Sul lato tecnico ho riconosciuto che il modello dati generato non avrebbe scalato sulla gerarchia Edificio → Immobile → Inquilino, ho gestito stati inconsistenti nel widget e risolto un binding SwiftUI che non aggiornava la lista pagamenti.</p>
+        <p>Sul lato design ho mantenuto a mano la coerenza di componenti e token contro l'AI che reintroduceva valori hardcoded, e ho scartato diversi pattern generati corretti a livello funzionale ma in contraddizione con flussi già stabiliti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IMPACT ================= -->
+  <section>
+    <div class="lang-en"><h2>Impact</h2></div>
+    <div class="lang-it"><h2>Risultati</h2></div>
+
+    <div class="stats">
+      <div><b>4 ★★★★★</b><span class="lang-en">App Store rating — no lower ratings</span><span class="lang-it">valutazioni App Store — nessuna sotto le 5 stelle</span></div>
+      <div><b>Jun 2026</b><span class="lang-en">on the App Store since launch</span><span class="lang-it">su App Store dal lancio</span></div>
+      <div><b>~4.5%</b><span class="lang-en">product-page conversion (App Store Connect, since launch)</span><span class="lang-it">conversione della pagina prodotto (App Store Connect, dal lancio)</span></div>
+      <div><b>100%</b><span class="lang-en">organic — zero marketing spend</span><span class="lang-it">organico — zero spesa in marketing</span></div>
+    </div>
+
+    <div class="lang-en">
+      <p>The first installs came entirely from organic App Store search — a few dozen in the first three months. Small numbers, but real users: two of the four reviewers left written feedback.</p>
+      <blockquote>
+        <p>"Well made, useful and above all easy to understand."</p>
+        <cite>App Store review · ★★★★★</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Easily the best app in this category. Nothing missing, simple to use, intuitive. Support is SUPER. An app that keeps evolving to fit everyone's needs — I'd recommend it no matter how many apartments or rooms you manage."</p>
+        <cite>App Store review · ★★★★★</cite>
+      </blockquote>
+    </div>
+    <div class="lang-it">
+      <p>Le prime installazioni sono arrivate interamente dalla ricerca organica su App Store — qualche decina nei primi tre mesi. Numeri piccoli, ma utenti reali: due dei quattro recensori hanno lasciato un commento scritto.</p>
+      <blockquote>
+        <p>"Ben fatta, utile e soprattutto facile da capire."</p>
+        <cite>Recensione App Store · ★★★★★</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Sicuramente la migliore app di questa categoria. Non manca niente, semplice da usare, intuitiva. Assistenza SUPER. App in continua evoluzione per adeguarsi alle esigenze di tutti — la consiglio a prescindere dalla quantità di appartamenti o camere da gestire."</p>
+        <cite>Recensione App Store · ★★★★★</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ================= LEARNINGS ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>What I'd do differently</h2>
+      <ul>
+        <li><strong>Talk to landlords before designing, not after.</strong> A benchmark told me what competitors do; it couldn't tell me where real users struggle. Post-launch email feedback is now the closest thing I have to a research loop.</li>
+        <li><strong>Validate pricing earlier.</strong> Launching well under market meant a disruptive ~5× correction later — one Apple requires existing subscribers to actively consent to.</li>
+        <li><strong>Gate the free tier from day one.</strong> The "one property free" rule wasn't enforced everywhere, so a lapsed subscriber could keep editing everything — a fix that ended up touching most of the app.</li>
+      </ul>
+    </div>
+    <div class="lang-it">
+      <h2>Cosa farei diversamente</h2>
+      <ul>
+        <li><strong>Parlare con i proprietari prima di progettare, non dopo.</strong> Un benchmark mi ha detto cosa fanno i competitor; non poteva dirmi dove gli utenti reali fanno fatica. Il feedback via email dopo il lancio è oggi la cosa più simile a un loop di ricerca che ho.</li>
+        <li><strong>Validare i prezzi prima.</strong> Lanciare molto sotto mercato ha comportato una correzione dirompente di ~5× più avanti — di quelle per cui Apple richiede il consenso attivo degli abbonati esistenti.</li>
+        <li><strong>Applicare i limiti del piano gratuito dal primo giorno.</strong> La regola "un immobile gratis" non era applicata ovunque, quindi un abbonamento scaduto poteva continuare a modificare tutto — un fix che alla fine ha toccato quasi tutta l'app.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot">
+    <a href="https://apps.apple.com/it/app/quillino-gestione-affitti/id6774200347">App Store ↗</a>
+    <a href="https://matteolubinu.github.io/quillino/">quillino.it ↗</a>
+    <a href="index.html"><span class="lang-en">Back to profile</span><span class="lang-it">Torna al profilo</span></a>
+    <p class="disclaimer">
+      <span class="lang-en">Quillino is a personal project. Screenshots use sample data. Figures are from App Store Connect as of August 2026.</span>
+      <span class="lang-it">Quillino è un progetto personale. Gli screenshot usano dati di esempio. I numeri provengono da App Store Connect ad agosto 2026.</span>
+    </p>
+  </div>
+
+</main>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    /* ---- language ---- */
+    var langBtn = document.getElementById('lang');
+    function applyLang(lang) {
+      root.lang = lang;
+      langBtn.textContent = lang === 'it' ? 'EN' : 'IT';
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    var savedLang;
+    try { savedLang = localStorage.getItem('lang'); } catch (e) {}
+    if (savedLang === 'it' || savedLang === 'en') applyLang(savedLang);
+    langBtn.addEventListener('click', function () {
+      applyLang(root.lang === 'it' ? 'en' : 'it');
+    });
+
+    /* ---- screenshot theme (light / dark) ---- */
+    var shotBtn = document.getElementById('shots-theme');
+    var shots = document.querySelectorAll('.shots img[data-light]');
+    function applyShots(mode) {
+      shotBtn.textContent = mode === 'light' ? '◑ Light' : '◐ Dark';
+      shotBtn.dataset.mode = mode;
+      for (var i = 0; i < shots.length; i++) {
+        shots[i].src = shots[i].getAttribute('data-' + mode);
+      }
+      try { localStorage.setItem('shotsTheme', mode); } catch (e) {}
+    }
+    var savedShots;
+    try { savedShots = localStorage.getItem('shotsTheme'); } catch (e) {}
+    if (savedShots !== 'light' && savedShots !== 'dark') {
+      savedShots = window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    applyShots(savedShots);
+    shotBtn.addEventListener('click', function () {
+      applyShots(shotBtn.dataset.mode === 'light' ? 'dark' : 'light');
+    });
+  })();
+</script>
+
+</body>
+</html>
