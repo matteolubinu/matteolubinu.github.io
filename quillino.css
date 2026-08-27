@@ -221,25 +221,33 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 /* ---- screenshots ---- */
 .shots {
   display: flex;
-  gap: 14px;
+  gap: 20px;
   overflow-x: auto;
-  margin: 24px -24px;
-  padding: 4px 24px 12px;
-  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  margin: 26px 0;
+  padding: 4px 2px 14px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Trailing spacer: keeps the last screenshot off the edge when scrolled fully. */
+.shots::after {
+  content: "";
+  flex: 0 0 2px;
 }
 
 .shots figure {
   margin: 0;
-  flex: 0 0 200px;
+  flex: 0 0 208px;
   scroll-snap-align: start;
 }
 
 .shots img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 22px;
   border: 1px solid var(--border);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   display: block;
 }
 
@@ -295,7 +303,7 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 }
 
 @media (min-width: 560px) {
-  .shots figure { flex-basis: 220px; }
+  .shots figure { flex-basis: 232px; }
 }
 
 @media (max-width: 480px) {
@@ -303,6 +311,7 @@ td:first-child { font-weight: 600; white-space: nowrap; }
   .lede { font-size: 16px; }
   .meta { grid-template-columns: 1fr; gap: 16px; }
   .stats { grid-template-columns: 1fr; }
-  .shots figure { flex-basis: 168px; }
+  .shots { gap: 16px; }
+  .shots figure { flex-basis: 62vw; max-width: 240px; }
   .foot a { display: inline-block; margin-bottom: 8px; }
 }
