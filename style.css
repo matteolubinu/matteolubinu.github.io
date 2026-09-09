@@ -186,6 +186,19 @@ h2 {
   overflow: hidden;
 }
 
+.project-more {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--link);
+}
+.project-more:hover { text-decoration: underline; text-underline-offset: 2px; }
+.project-more + .badge-link { margin-top: 10px; }
+
 .badge-link {
   position: relative;
   z-index: 1;
