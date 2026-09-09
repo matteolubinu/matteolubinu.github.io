@@ -1,20 +1,27 @@
+/* ---------------------------------------------------------------------------
+   Minimal, con la palette menta. Nome in Fraunces, tutto il resto sobrio:
+   card a bordo sottile, ombre appena accennate, niente adesivi.
+   --------------------------------------------------------------------------- */
+
 :root {
-  --bg: #faf8f4;
-  --surface: #ffffff;
-  --border: #e8e3d9;
-  --text: #262420;
-  --text-secondary: #8c8577;
-  --accent: #5c6b4a;
+  --bg-a: #e9f1de;
+  --bg-b: #dfe9cd;
+  --surface: #fbfdf6;
+  --border: #d1dfbe;
+  --text: #29331d;
+  --text-2: #63704c;
+  --link: #47673a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #171613;
-    --surface: #1d1c18;
-    --border: #302e28;
-    --text: #f3f0e9;
-    --text-secondary: #948d7d;
-    --accent: #a3b78b;
+    --bg-a: #171c12;
+    --bg-b: #12160e;
+    --surface: #222819;
+    --border: #3a4430;
+    --text: #edf1e4;
+    --text-2: #9dab86;
+    --link: #aecb96;
   }
 }
 
@@ -23,96 +30,104 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
   color: var(--text);
 }
 
 body {
   min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 100%);
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 .page {
   width: 100%;
-  max-width: 400px;
-  padding: 48px 24px;
-  position: relative;
+  max-width: 392px;
+  padding: 44px 24px 40px;
 }
 
-.hero {
-  text-align: center;
-}
+a { color: var(--link); }
+
+/* --- hero -------------------------------------------------------------- */
+.hero { text-align: center; }
 
 .avatar {
-  width: 92px;
-  height: 92px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 0 1px var(--border);
 }
 
-.hero h1 {
-  margin: 20px 0 8px;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+h1 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-variation-settings: "SOFT" 50;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin: 16px 0 5px;
+  color: var(--text);
+}
+
+.tagline {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
 }
 
 .bio {
   margin: 0 auto;
-  max-width: 280px;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  max-width: 32ch;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-2);
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 20px;
-}
-
-.socials a {
-  width: 34px;
-  height: 34px;
+/* --- links ------------------------------------------------------------ */
+.links {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+.links .icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
-  color: var(--text-secondary);
+  color: var(--text-2);
+  transition: color .15s ease;
 }
+.links .icon:hover { color: var(--text); }
+.links .icon svg { width: 18px; height: 18px; }
 
-.socials a:hover { color: var(--text); }
+/* --- sections -------------------------------------------------------------- */
+section { margin-top: 40px; }
+.now { margin-top: 32px; }
 
-.socials svg { width: 17px; height: 17px; }
-
-.projects {
-  margin-top: 56px;
-}
-
-.projects + .projects {
-  margin-top: 36px;
-}
-
-/* Case study card: no App Store badge, the whole card opens the write-up. */
-.study .project-body p {
-  color: var(--text-secondary);
-}
-
-.projects h2 {
-  font-size: 12px;
-  font-weight: 600;
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  margin: 0 0 18px;
+  letter-spacing: 0.09em;
+  color: var(--text-2);
+  margin: 0 0 16px;
 }
 
-.project-list {
+/* --- project cards ------------------------------------------------------ */
+.work-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -121,36 +136,38 @@ body {
 .project {
   position: relative;
   display: flex;
-  align-items: center;
   gap: 14px;
-  padding: 16px;
+  align-items: flex-start;
+  padding: 13px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.15s ease;
+  border-radius: 14px;
+  transition: border-color .15s ease;
+}
+.project:hover { border-color: color-mix(in srgb, var(--text-2) 50%, var(--border)); }
+.project:focus-within { outline: 2px solid var(--link); outline-offset: 2px; }
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px var(--border);
 }
 
-.project:active { transform: scale(0.98); }
+.project-main { flex: 1; min-width: 0; padding-top: 1px; }
 
-/* Stretched link: il titolo porta al sito del progetto ma l'area cliccabile è tutta la
-   card. Il badge App Store si alza sopra con z-index per restare un link a sé. */
-.project-link {
-  text-decoration: none;
-  color: inherit;
+.project h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
-
-/* Freccetta "porta fuori": senza, la card sembrava avere solo il badge come link e
-   niente diceva che il titolo apre il sito del progetto (su touch non c'è hover). */
-.ext {
-  width: 11px;
-  height: 11px;
-  margin-left: 2px;
-  color: var(--text-secondary);
-}
-
+.project-link { color: inherit; text-decoration: none; }
+/* Stretched link: il titolo apre il progetto ma tutta la card è cliccabile.
+   Il badge App Store resta un link a sé (z-index sopra). */
 .project-link::after {
   content: "";
   position: absolute;
@@ -158,72 +175,41 @@ body {
   border-radius: inherit;
 }
 
-.project-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 1px var(--border);
-}
-
-.project-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.project-body h3 {
-  margin: 0 0 2px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.project-body p {
-  margin: 0;
-  font-size: 13px;
+.project p {
+  margin: 4px 0 0;
+  font-size: 12px;
   line-height: 1.45;
-  color: var(--text-secondary);
+  color: var(--text-2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
-.project-cta {
+.badge-link {
   position: relative;
   z-index: 1;
-  flex-shrink: 0;
-  margin-left: auto;
-  display: block;
+  display: inline-block;
+  margin-top: 12px;
+}
+.badge { height: 24px; width: auto; border-radius: 4px; display: block; }
+
+@media (max-width: 340px) {
+  .project { gap: 12px; padding: 12px; }
 }
 
-.badge-live-img {
-  height: 34px;
-  width: auto;
-  border-radius: 7px;
-  display: block;
+/* --- currently ----------------------------------------------------------- */
+.now p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-2);
 }
 
-/* Sotto i 400px il badge (102px fissi) lasciava alla descrizione una colonna da ~64px e
-   il testo si spezzava su cinque righe: qui il badge va a capo su una riga sua,
-   allineato al testo (44px di icona + 14px di gap). */
-@media (max-width: 400px) {
-  .project {
-    flex-wrap: wrap;
-    row-gap: 12px;
-  }
+/* --- footer ------------------------------------------------------------- */
+footer { margin-top: 44px; text-align: center; }
+footer p { margin: 0; font-size: 12px; color: var(--text-2); }
 
-  .project-body {
-    flex-basis: calc(100% - 58px);
-  }
-
-  .project-cta {
-    margin-left: 58px;
-  }
-}
-
-footer {
-  margin-top: 40px;
-  text-align: center;
-}
-
-footer p {
-  font-size: 12px;
-  color: var(--text-secondary);
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
