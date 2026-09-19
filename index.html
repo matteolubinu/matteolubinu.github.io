@@ -8,17 +8,33 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <img class="avatar" src="assets/photo.jpg" alt="Matteo Lubinu" width="116" height="116">
-      <h1>Matteo Lubinu</h1>
-      <p class="tagline">Product designer</p>
-      <p class="bio">Homebody and bass player, into sports and video games.</p>
 
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Matteo Lubinu</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#work">Work</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <img class="avatar" src="assets/photo.jpg" alt="Matteo Lubinu" width="88" height="88">
+      <div>
+        <h1>Matteo Lubinu</h1>
+        <p class="tagline">Product designer</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="bio">Homebody and bass player, into sports and video games.</p>
       <nav class="links" aria-label="Elsewhere">
         <a class="icon" href="https://instagram.com/matteolubi" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
@@ -27,14 +43,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><circle cx="7.5" cy="7" r="1" fill="currentColor" stroke="none"/><path d="M11.5 17v-4a2.5 2.5 0 0 1 5 0v4"/><line x1="11.5" y1="10.5" x2="11.5" y2="17"/></svg>
         </a>
       </nav>
-    </header>
+    </div>
+  </section>
 
-    <section class="work">
-      <h2>Work</h2>
-
+  <section id="work">
+    <div class="wrap">
+      <p class="kicker">Work</p>
       <div class="work-list">
-        <!-- Tutta la card apre il progetto (stretched link sul titolo); il badge
-             App Store resta un link a sé, sopra con z-index. -->
         <article class="project">
           <img class="project-icon" src="assets/quillino-icon.png" alt="" width="40" height="40">
           <div class="project-main">
@@ -58,16 +73,22 @@
           </div>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="now">
-      <h2>Currently</h2>
-      <p>Shipping updates to Quillino and Refertrack, plus a few apps that aren&rsquo;t ready to show yet.</p>
-    </section>
+  <section class="now">
+    <div class="wrap">
+      <p class="kicker">Currently</p>
+      <p class="now-text">Shipping updates to Quillino and Refertrack, plus a few apps that aren&rsquo;t ready to show yet.</p>
+    </div>
+  </section>
+</main>
 
-    <footer>
-      <p>Made with &#128154;</p>
-    </footer>
-  </main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Made with &#128154;</p>
+  </div>
+</footer>
+
 </body>
 </html>
