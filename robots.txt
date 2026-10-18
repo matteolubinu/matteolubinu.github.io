@@ -1,0 +1,8 @@
+# Vale per tutto matteolubinu.github.io, compresi i siti nelle sottocartelle (i robots.txt delle sottocartelle non sono letti dai motori di ricerca).
+User-agent: *
+Allow: /
+
+Sitemap: https://matteolubinu.github.io/sitemap.xml
+Sitemap: https://matteolubinu.github.io/quillino/sitemap.xml
+Sitemap: https://matteolubinu.github.io/refertrack/sitemap.xml
+Sitemap: https://matteolubinu.github.io/ryuubi-studio/sitemap.xml

@@ -1,3 +1,6 @@
+/* Inter, ospitata qui (variabile, pesi 100-900): nessuna richiesta a Google Fonts. Licenza: assets/fonts/OFL-Inter.txt */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("assets/fonts/inter-latin.woff2") format("woff2"); }
+
 /* Matteo Lubinu: minimal, black and white (same system as Ryuubi Studio) */
 
 :root {
@@ -90,7 +93,7 @@ p { margin: 0 0 1em; }
 section { padding: 56px 0; border-top: 1px solid var(--line); }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
 .section-head h2 { font-size: 1.5rem; }
-.section-head a { font-size: .92rem; color: var(--muted); }
+.section-head a { font-size: .92rem; color: var(--muted); display: inline-block; padding: 8px 0; }
 .kicker { font-size: .78rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--muted-2); margin: 0 0 14px; }
 
 /* ---------- Work ---------- */
@@ -108,7 +111,7 @@ section { padding: 56px 0; border-top: 1px solid var(--line); }
 .project-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .project p.desc { margin: 8px 0 0; color: var(--muted); font-size: 1rem; }
 .project-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; font-size: .92rem; font-weight: 500; }
-.project-actions a { text-decoration-color: var(--line-strong); }
+.project-actions a { display: inline-block; padding: 8px 0; text-decoration-color: var(--line-strong); }
 .project-actions a:hover { text-decoration-color: currentColor; }
 .project-actions .soon { font-weight: 400; color: var(--muted-2); }
 
@@ -132,7 +135,7 @@ section { padding: 56px 0; border-top: 1px solid var(--line); }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: .88rem; color: var(--muted-2); }
 .site-footer p { margin: 0; }
 .site-footer nav { display: flex; gap: 20px; }
-.site-footer a { text-decoration: none; }
+.site-footer a { display: inline-block; padding: 10px 0; text-decoration: none; }
 .site-footer a:hover { color: var(--text); text-decoration: underline; }
 
 /* ---------- About ---------- */
