@@ -110,6 +110,7 @@ section { padding: 56px 0; border-top: 1px solid var(--line); }
 .project-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; font-size: .92rem; font-weight: 500; }
 .project-actions a { text-decoration-color: var(--line-strong); }
 .project-actions a:hover { text-decoration-color: currentColor; }
+.project-actions .soon { font-weight: 400; color: var(--muted-2); }
 
 /* ---------- Professional work ---------- */
 
