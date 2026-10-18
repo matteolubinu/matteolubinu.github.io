@@ -39,11 +39,11 @@
     </div>
     <div>
       <dt><span class="lang-en">Timeline</span><span class="lang-it">Tempistiche</span></dt>
-      <dd><span class="lang-en">~1 month build · launched 1 June 2026</span><span class="lang-it">~1 mese di sviluppo · lancio 1° giugno 2026</span></dd>
+      <dd><span class="lang-en">~1 month build · iOS launched 1 June 2026 · Android port from September</span><span class="lang-it">~1 mese di sviluppo · lancio iOS 1° giugno 2026 · porting Android da settembre</span></dd>
     </div>
     <div>
       <dt><span class="lang-en">Platforms</span><span class="lang-it">Piattaforme</span></dt>
-      <dd>iOS · iPadOS · macOS · watchOS</dd>
+      <dd>iOS · iPadOS · macOS · watchOS · <span class="lang-en">Android (coming soon)</span><span class="lang-it">Android (in arrivo)</span></dd>
     </div>
     <div>
       <dt><span class="lang-en">Scope</span><span class="lang-it">Ambito</span></dt>
@@ -51,11 +51,11 @@
     </div>
     <div>
       <dt><span class="lang-en">Built with</span><span class="lang-it">Realizzata con</span></dt>
-      <dd><span class="lang-en">SwiftUI · AI pair-programming</span><span class="lang-it">SwiftUI · sviluppo in coppia con l'AI</span></dd>
+      <dd><span class="lang-en">SwiftUI · Kotlin &amp; Jetpack Compose · AI pair-programming</span><span class="lang-it">SwiftUI · Kotlin e Jetpack Compose · sviluppo in coppia con l'AI</span></dd>
     </div>
     <div>
       <dt><span class="lang-en">Status</span><span class="lang-it">Stato</span></dt>
-      <dd><span class="lang-en">Live on the App Store</span><span class="lang-it">Pubblicata su App Store</span></dd>
+      <dd><span class="lang-en">Live on the App Store · Android coming soon</span><span class="lang-it">Pubblicata su App Store · Android in arrivo</span></dd>
     </div>
   </dl>
 
@@ -108,7 +108,7 @@
         <tr><td>Properties</td><td>Buildings, units, tenants, contracts, documents</td></tr>
         <tr><td>Deadlines</td><td>One unified calendar with schedulable push notifications</td></tr>
         <tr><td>Report</td><td>Automatic annual tax summary (cedolare / IRPEF)</td></tr>
-        <tr><td>Widget</td><td>Monthly collection bar on the iOS Home Screen</td></tr>
+        <tr><td>Widget</td><td>Monthly collection bar on the Home Screen (iOS and Android)</td></tr>
       </table>
       <p>A flat tab bar keeps every function one tap away from anywhere in the app.</p>
     </div>
@@ -121,7 +121,7 @@
         <tr><td>Immobili</td><td>Edifici, unità, inquilini, contratti, documenti</td></tr>
         <tr><td>Scadenze</td><td>Un calendario unico con notifiche push programmabili</td></tr>
         <tr><td>Report</td><td>Riepilogo fiscale annuo automatico (cedolare / IRPEF)</td></tr>
-        <tr><td>Widget</td><td>Barra di incasso mensile sulla Home Screen iOS</td></tr>
+        <tr><td>Widget</td><td>Barra di incasso mensile sulla Home Screen (iOS e Android)</td></tr>
       </table>
       <p>Una tab bar piatta tiene ogni funzione a un tap di distanza da qualsiasi punto dell'app.</p>
     </div>
@@ -201,13 +201,13 @@
       <h2>A pattern I threw away</h2>
       <p>The first paywall was a Free-vs-Pro comparison table. It didn't hold up to a second look: it made the user do the work of finding the one plan that mattered, and it pushed "Restore purchases" below the fold — an App Review risk.</p>
       <p>The rebuild is a three-row vertical plan selector with the annual plan preselected, five bullet benefits instead of a matrix, a single CTA that reflects the chosen plan, and Restore moved into the header. Selecting a row fills its background rather than just outlining it, so the choice is unambiguous.</p>
-      <p>I repriced at the same time. Benchmarking the Italian competitors showed the market converging around €60 a year, while Quillino was priced at €12.99 — well below it. Annual moved to €59.99, with a new monthly option for people who want a smaller commitment.</p>
+      <p>I repriced at the same time. Benchmarking the Italian competitors showed the market converging around €60 a year, while Quillino was priced at €12.99 — well below it. Annual moved to €59.99, with a new monthly option for people who want a smaller commitment. A one-time lifetime purchase (€149.99) was added later for people who simply don't want a subscription.</p>
     </div>
     <div class="lang-it">
       <h2>Un pattern che ho buttato</h2>
       <p>Il primo paywall era una tabella comparativa Free / Pro. A un secondo sguardo non reggeva: lasciava all'utente il lavoro di capire quale fosse il piano giusto, e spingeva "Ripristina acquisti" sotto la piega — un rischio in fase di App Review.</p>
       <p>La nuova versione è un selettore di piani a tre righe verticali con l'annuale preselezionato, cinque benefici puntati invece di una matrice, una singola CTA che riflette il piano scelto, e Ripristina spostato nell'header. Selezionare una riga ne riempie lo sfondo invece di limitarsi al bordo, così la scelta è inequivocabile.</p>
-      <p>Ne ho approfittato per rivedere i prezzi. Il benchmark dei competitor italiani mostrava il mercato attestarsi attorno ai 60 € l'anno, mentre Quillino era a 12,99 € — molto sotto. L'annuale è passato a 59,99 €, con un nuovo piano mensile per chi vuole un impegno minore.</p>
+      <p>Ne ho approfittato per rivedere i prezzi. Il benchmark dei competitor italiani mostrava il mercato attestarsi attorno ai 60 € l'anno, mentre Quillino era a 12,99 € — molto sotto. L'annuale è passato a 59,99 €, con un nuovo piano mensile per chi vuole un impegno minore. Più avanti ho aggiunto l'acquisto unico a vita (149,99 €) per chi semplicemente non vuole un abbonamento.</p>
     </div>
   </section>
 
@@ -231,20 +231,91 @@
     </div>
   </section>
 
+  <!-- ================= SINCE LAUNCH ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>What changed since launch</h2>
+      <p>The product kept moving after June. The latest version (2.0.2) is mostly about answering questions I got by email, and about removing hesitation:</p>
+      <ul>
+        <li><strong>A monthly recap.</strong> In the first days of the month a banner on Home, a dedicated screen for the month that just ended and an optional notification on the 1st. It closes the loop on the "how much did I collect?" question.</li>
+        <li><strong>A paywall that leads with the promise.</strong> The promise is in the title, previews replace the feature list, and the CTA and legal links stay pinned at the bottom.</li>
+        <li><strong>Fewer unexplained acronyms.</strong> RLI, FOI and APE are spelled out where they first appear, because a landlord shouldn't need an accountant to read a button.</li>
+        <li><strong>A free tier that fails gracefully.</strong> If Pro lapses nothing is deleted: the first property stays editable, the others are hidden but their deadlines stay visible, read-only, and basic export stays free.</li>
+        <li><strong>Large text and accessibility.</strong> Row titles no longer truncate at big type sizes and Home stats stack in a column.</li>
+        <li><strong>Import and guides.</strong> Spreadsheet import (Excel or CSV) to move off the old workflow, and a guide to the 2026 cedolare secca down payment.</li>
+      </ul>
+    </div>
+    <div class="lang-it">
+      <h2>Cosa è cambiato dal lancio</h2>
+      <p>Il prodotto è andato avanti dopo giugno. L'ultima versione (2.0.2) risponde soprattutto a domande arrivate via mail e toglie esitazioni:</p>
+      <ul>
+        <li><strong>Un riepilogo del mese.</strong> Nei primi giorni del mese un banner in Home, una schermata dedicata al mese appena chiuso e una notifica facoltativa il primo. Chiude il cerchio della domanda "quanto ho incassato?".</li>
+        <li><strong>Un paywall che parte dalla promessa.</strong> La promessa è nel titolo, le anteprime sostituiscono l'elenco di funzioni, e CTA e link legali restano fissi in basso.</li>
+        <li><strong>Meno sigle senza spiegazione.</strong> RLI, FOI e APE sono spiegate dove compaiono la prima volta: un proprietario non dovrebbe aver bisogno di un commercialista per leggere un bottone.</li>
+        <li><strong>Un piano gratuito che non rompe niente.</strong> Se il Pro scade non si cancella nulla: il primo immobile resta modificabile, gli altri sono nascosti ma le loro scadenze restano visibili in sola lettura, e l'esportazione di base resta gratuita.</li>
+        <li><strong>Caratteri grandi e accessibilità.</strong> I titoli delle righe non si tagliano più con i corpi grandi e le statistiche della Home vanno in colonna.</li>
+        <li><strong>Importazione e guide.</strong> Importazione da foglio (Excel o CSV) per lasciare il vecchio metodo, e una guida all'acconto della cedolare secca 2026.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= ANDROID ================= -->
+  <section>
+    <div class="lang-en">
+      <h2>Taking it to Android</h2>
+      <p>Since September I've been porting Quillino to Android with Kotlin and Jetpack Compose. The rule was simple: the iOS app is the source of truth, and a parity document tracks every screen, rule and calculation until the Android one matches. The tax logic was ported with its tests, and a comparison bench checks that the Kotlin results are identical to the Swift ones on thousands of inputs.</p>
+      <p>Matching didn't mean copying. Where Android has its own idiom I used it:</p>
+      <ul>
+        <li><strong>Native patterns.</strong> A Material bottom bar and calendar date pickers instead of the iOS wheel, with the same tokens, colours and status language.</li>
+        <li><strong>Settings became "Opzioni".</strong> The original label was getting cut off on narrow phones, so the tab, the page title and every sentence that mentions it use the shorter word.</li>
+        <li><strong>Platform equivalents.</strong> Biometric prompt for the app lock, a Glance widget, shortcuts from the app icon, WorkManager reminders, and an on-device ML Kit receipt reader.</li>
+        <li><strong>Honest exclusions.</strong> No iCloud sync (a manual backup file plus Google's automatic backup instead), no Siri and no watch app in v1.</li>
+      </ul>
+      <p>The Android version is about to be released on Google Play. This page will link to it as soon as it's live.</p>
+    </div>
+    <div class="lang-it">
+      <h2>Portare Quillino su Android</h2>
+      <p>Da settembre sto portando Quillino su Android con Kotlin e Jetpack Compose. La regola era semplice: l'app iOS è la fonte di verità e un documento di parità tiene traccia di ogni schermata, regola e calcolo finché la versione Android non coincide. La logica fiscale è stata portata insieme ai suoi test, e un banco di confronto verifica che i risultati in Kotlin siano identici a quelli in Swift su migliaia di input.</p>
+      <p>Coincidere non voleva dire copiare. Dove Android ha un suo idioma l'ho usato:</p>
+      <ul>
+        <li><strong>Pattern nativi.</strong> Barra inferiore Material e calendari per le date al posto della rotella iOS, con gli stessi token, colori e linguaggio di stato.</li>
+        <li><strong>Le Impostazioni diventano "Opzioni".</strong> L'etichetta originale si tagliava sui telefoni stretti, quindi scheda, titolo della pagina e ogni frase che la nomina usano la parola più corta.</li>
+        <li><strong>Equivalenti di piattaforma.</strong> Prompt biometrico per il blocco app, widget con Glance, scorciatoie dall'icona, promemoria con WorkManager e lettura delle ricevute con ML Kit sul dispositivo.</li>
+        <li><strong>Esclusioni dichiarate.</strong> Niente sincronizzazione iCloud (al suo posto un file di backup manuale più il backup automatico di Google), niente Siri e niente app per orologio nella v1.</li>
+      </ul>
+      <p>La versione Android sta per uscire su Google Play. Questa pagina rimanderà all'app appena sarà online.</p>
+    </div>
+
+    <div class="shots" aria-label="Quillino for Android screenshots">
+      <figure>
+        <img src="assets/quillino/android-01-dashboard-dark.webp" data-light="assets/quillino/android-01-dashboard-light.webp" data-dark="assets/quillino/android-01-dashboard-dark.webp" alt="Quillino for Android: dashboard" loading="lazy">
+        <figcaption><span class="lang-en">Android — same dashboard logic</span><span class="lang-it">Android — la stessa logica di dashboard</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/android-04-scadenze-dark.webp" data-light="assets/quillino/android-04-scadenze-light.webp" data-dark="assets/quillino/android-04-scadenze-dark.webp" alt="Quillino for Android: deadlines" loading="lazy">
+        <figcaption><span class="lang-en">Deadlines, with Material components</span><span class="lang-it">Scadenze, con componenti Material</span></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/quillino/android-05-report-dark.webp" data-light="assets/quillino/android-05-report-light.webp" data-dark="assets/quillino/android-05-report-dark.webp" alt="Quillino for Android: report" loading="lazy">
+        <figcaption><span class="lang-en">Report, same fiscal rules</span><span class="lang-it">Report, le stesse regole fiscali</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- ================= IMPACT ================= -->
   <section>
     <div class="lang-en"><h2>Impact</h2></div>
     <div class="lang-it"><h2>Risultati</h2></div>
 
     <div class="stats">
-      <div><b>4 ★★★★★</b><span class="lang-en">App Store rating — no lower ratings</span><span class="lang-it">valutazioni App Store — nessuna sotto le 5 stelle</span></div>
+      <div><b>5.0 ★</b><span class="lang-en">App Store rating across 5 ratings — none lower</span><span class="lang-it">valutazione App Store su 5 voti — nessuno più basso</span></div>
       <div><b><span class="lang-en">Jun 2026</span><span class="lang-it">Giu 2026</span></b><span class="lang-en">on the App Store, updated regularly since</span><span class="lang-it">su App Store, aggiornata con regolarità da allora</span></div>
       <div><b>~4.5%</b><span class="lang-en">product-page conversion (App Store Connect, since launch)</span><span class="lang-it">conversione della pagina prodotto (App Store Connect, dal lancio)</span></div>
       <div><b>100%</b><span class="lang-en">organic — zero marketing spend</span><span class="lang-it">organico — zero spesa in marketing</span></div>
     </div>
 
     <div class="lang-en">
-      <p>The first installs came entirely from organic App Store search — a few dozen in the first three months. Small numbers, but real users: two of the four reviewers left written feedback.</p>
+      <p>The first installs came entirely from organic App Store search — a few dozen in the first three months. Small numbers, but real users, some of them leaving written feedback.</p>
       <blockquote>
         <p>"Well made, useful and above all easy to understand."</p>
         <cite>App Store review · ★★★★★</cite>
@@ -255,7 +326,7 @@
       </blockquote>
     </div>
     <div class="lang-it">
-      <p>Le prime installazioni sono arrivate interamente dalla ricerca organica su App Store — qualche decina nei primi tre mesi. Numeri piccoli, ma utenti reali: due dei quattro recensori hanno lasciato un commento scritto.</p>
+      <p>Le prime installazioni sono arrivate interamente dalla ricerca organica su App Store — qualche decina nei primi tre mesi. Numeri piccoli, ma utenti reali, alcuni dei quali hanno lasciato un commento scritto.</p>
       <blockquote>
         <p>"Ben fatta, utile e soprattutto facile da capire."</p>
         <cite>Recensione App Store · ★★★★★</cite>
@@ -290,10 +361,11 @@
   <div class="foot">
     <a href="https://apps.apple.com/it/app/quillino-gestione-affitti/id6774200347">App Store ↗</a>
     <a href="https://matteolubinu.github.io/quillino/">quillino.it ↗</a>
+    <!-- TODO Android: aggiungere qui il link a Google Play quando disponibile -->
     <a href="index.html"><span class="lang-en">Back to profile</span><span class="lang-it">Torna al profilo</span></a>
     <p class="disclaimer">
-      <span class="lang-en">Quillino is a personal project. Screenshots use sample data. Figures are from App Store Connect as of August 2026.</span>
-      <span class="lang-it">Quillino è un progetto personale. Gli screenshot usano dati di esempio. I numeri provengono da App Store Connect ad agosto 2026.</span>
+      <span class="lang-en">Quillino is a personal project. Screenshots use sample data. Conversion and install figures are from App Store Connect as of August 2026; the rating is as of October 2026.</span>
+      <span class="lang-it">Quillino è un progetto personale. Gli screenshot usano dati di esempio. Conversione e installazioni provengono da App Store Connect ad agosto 2026; la valutazione è aggiornata a ottobre 2026.</span>
     </p>
   </div>
 
