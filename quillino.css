@@ -245,10 +245,9 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 .shots img {
   width: 100%;
   height: auto;
-  border-radius: 22px;
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   display: block;
+  /* la cornice del telefono è nell'immagine (stessa cornice dei post Instagram) */
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
 }
 
 .shots figcaption {
